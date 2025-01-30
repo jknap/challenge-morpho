@@ -4,6 +4,8 @@ This is a challenge for Morpho.
 Here is the link to the [case-study](https://morpho-labs.notion.site/Case-Study-Developing-a-Vault-info-card-13dd69939e6d80b5a781c50d6ce7b0f8)
 Here is the link to the [Figma](https://www.figma.com/design/W3179bRFYxMfBrLE3ENlXA/Frontend-Case-Study---Jean-Knapik?m=auto&t=emHKDDwtcRnL2HiS-1)
 
+Demo link (deployed on Vercel) : https://challenge-morpho.vercel.app/
+
 ## Features
 
 ### Core
