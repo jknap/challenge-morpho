@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Boilerplate Next 2025',
-  description: 'A repository for the Boilerplate Next 2025 projects',
+  title: 'Morpho Challenge',
+  description: 'A repository for the Morpho Challenge',
 };
 
 export default function RootLayout({
