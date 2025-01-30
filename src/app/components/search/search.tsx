@@ -22,7 +22,7 @@ export function Search({
 }: SearchProps) {
   return (
     <div className='w-[350px] h-[160px] px-5 bg-morpho-bg-block border-morpho-border-primary border rounded-lg flex flex-col justify-center'>
-      <div className='flex flex-col gap-2'>
+      <div className='relative flex flex-col gap-2'>
         <label
           htmlFor='search'
           className='text-morpho-text-secondary text-xs font-medium'
@@ -37,6 +37,11 @@ export function Search({
             onSearch={onSearch}
           />
         </SearchDropdown>
+        {status === 'error' && (
+          <div className='absolute -bottom-5 right-0 text-xsm text-morpho-text-error'>
+            This is not a valid address
+          </div>
+        )}
       </div>
     </div>
   );

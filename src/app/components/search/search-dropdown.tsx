@@ -25,15 +25,21 @@ export function SearchDropdown({
         sideOffset={10}
         onOpenAutoFocus={(e) => e.preventDefault()}
       >
-        {vaults.map((vault) => (
-          <div
-            key={vault.address}
-            className='px-4 py-2 flex items-center justify-between hover:bg-morpho-bg-block cursor-pointer'
-          >
-            <div onClick={() => onSelect(vault)}>{vault.name}</div>
-            <ChevronRight size={20} />
+        {vaults.length === 0 ? (
+          <div className='w-full text-center text-xsm text-morpho-text-body'>
+            No results :(
           </div>
-        ))}
+        ) : (
+          vaults.map((vault) => (
+            <div
+              key={vault.address}
+              className='px-4 py-2 flex items-center justify-between hover:bg-morpho-bg-block cursor-pointer'
+            >
+              <div onClick={() => onSelect(vault)}>{vault.name}</div>
+              <ChevronRight size={20} />
+            </div>
+          ))
+        )}
       </PopoverContent>
     </Popover>
   );

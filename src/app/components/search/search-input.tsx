@@ -63,6 +63,8 @@ export function SearchInput({
         variant={status === 'error' ? 'error' : 'default'}
         value={search}
         onChange={(e) => onSearch(e.target.value)}
+        maxLength={42}
+        className='pr-8'
       />
       <SearchIcon status={status} onClear={onClear} />
     </div>
