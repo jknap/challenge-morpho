@@ -44,12 +44,17 @@ function SearchIcon({ status, onClear }: SearchContentProps) {
   );
 }
 
-export type SearchProps = SearchContentProps & {
+export type SearchInputProps = SearchContentProps & {
   search: string;
   onSearch: (search: string) => void;
 };
 
-function SearchInput({ status, onClear, search, onSearch }: SearchProps) {
+export function SearchInput({
+  status,
+  onClear,
+  search,
+  onSearch,
+}: SearchInputProps) {
   return (
     <div className='relative w-full'>
       <Input
@@ -60,27 +65,6 @@ function SearchInput({ status, onClear, search, onSearch }: SearchProps) {
         onChange={(e) => onSearch(e.target.value)}
       />
       <SearchIcon status={status} onClear={onClear} />
-    </div>
-  );
-}
-
-export function Search({ status, onClear, search, onSearch }: SearchProps) {
-  return (
-    <div className='w-[350px] h-[160px] px-5 bg-morpho-bg-block border-morpho-border-primary border rounded-lg flex flex-col justify-center'>
-      <div className='flex flex-col gap-2'>
-        <label
-          htmlFor='search'
-          className='text-morpho-text-secondary text-xs font-medium'
-        >
-          Vault Address
-        </label>
-        <SearchInput
-          status={status}
-          onClear={onClear}
-          search={search}
-          onSearch={onSearch}
-        />
-      </div>
     </div>
   );
 }

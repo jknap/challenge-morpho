@@ -2,7 +2,10 @@
 
 import { useState } from 'react';
 import { useDebounce } from 'react-use';
-import { Search, SearchStatus } from '@/app/components/search';
+import { Search } from '@/app/components/search/search';
+import { VaultItem } from '@/app/components/search/search-dropdown';
+import { SearchStatus } from '@/app/components/search/search-input';
+import { MOCK_VAULTS } from '@/app/components/search/search.stories';
 
 export default function Home() {
   const [search, setSearch] = useState('');
@@ -20,6 +23,8 @@ export default function Home() {
     [search]
   );
 
+  const vaults = MOCK_VAULTS;
+
   return (
     <div className='flex-1 overflow-y-auto flex flex-col items-center justify-center h-screen'>
       <Search
@@ -27,6 +32,9 @@ export default function Home() {
         onClear={status === 'error' && !!search ? onClear : undefined}
         search={search}
         onSearch={setSearch}
+        vaults={vaults}
+        onSelect={() => {}}
+        open={vaults.length > 0}
       />
     </div>
   );
