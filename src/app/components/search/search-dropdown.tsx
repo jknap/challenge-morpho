@@ -1,16 +1,11 @@
 import { ChevronRight } from 'lucide-react';
 import { PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Popover } from '@/components/ui/popover';
-
-export type VaultItem = {
-  name: string;
-  address: string;
-  chainId: number;
-};
+import { Vault } from '@/lib/api/queries';
 
 export type SearchDropdownProps = {
-  vaults: VaultItem[];
-  onSelect: (vault: VaultItem) => void;
+  vaults: Vault[];
+  onSelect: (vault: Vault) => void;
   open: boolean;
   children?: React.ReactNode;
 };
@@ -24,7 +19,12 @@ export function SearchDropdown({
   return (
     <Popover open={open}>
       <PopoverTrigger>{children}</PopoverTrigger>
-      <PopoverContent className='w-[310px]'>
+      <PopoverContent
+        className='w-[310px] max-h-[200px] overflow-y-auto'
+        side='bottom'
+        sideOffset={10}
+        onOpenAutoFocus={(e) => e.preventDefault()}
+      >
         {vaults.map((vault) => (
           <div
             key={vault.address}
