@@ -61,7 +61,7 @@ export default function Home() {
         onSearch={setSearch}
         vaults={data?.vaults?.items ?? []}
         onSelect={onSelect}
-        open={debouncedSearch.length > 0 && status !== 'error'}
+        open={search.length > 0 && status !== 'error'}
       />
     </div>
   );
