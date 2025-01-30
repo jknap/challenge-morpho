@@ -41,6 +41,7 @@ export default function Home() {
   const { data, isPending, error } = useQuery({
     queryKey: ['vaults', debouncedSearch],
     queryFn: () => fetchGraphQL<VaultsResponse>(query),
+    enabled: debouncedSearch.length > 0,
     retry: false,
   });
 
@@ -50,7 +51,14 @@ export default function Home() {
     router.push(formatVaultPath(vault));
   }
 
-  const status = isAddressError ? 'error' : 'idle';
+  let status: SearchStatus = 'idle';
+  if (isAddressError || !!error) {
+    status = 'error';
+  } else if (!!search && isPending) {
+    status = 'loading';
+  } else if (data?.vaults?.items.length) {
+    status = 'success';
+  }
 
   return (
     <div className='flex-1 overflow-y-auto flex flex-col items-center justify-center h-screen'>
@@ -61,7 +69,7 @@ export default function Home() {
         onSearch={setSearch}
         vaults={data?.vaults?.items ?? []}
         onSelect={onSelect}
-        open={search.length > 0 && status !== 'error'}
+        open={search.length > 0 && !!data && status !== 'error'}
       />
     </div>
   );
