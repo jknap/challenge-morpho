@@ -1,6 +1,8 @@
 import { ArrowUpRightIcon } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/buttons/button';
+import { PATHS } from '@/lib/route-formatter';
 
 const GITHUB_REPO_URL = 'https://github.com/jknap/challenge-morpho';
 
@@ -8,7 +10,9 @@ export function Navbar() {
   return (
     <div className='w-full h-[50px] px-10 border-b border-morpho-border-primary flex items-center justify-between'>
       <div className='flex items-center gap-8'>
-        <Image src='/logo.png' alt='Morpho' width={16} height={16} />
+        <Link href={PATHS.HOME}>
+          <Image src='/logo.png' alt='Morpho' width={16} height={16} />
+        </Link>
         <span className='text-morpho-text-body text-xsm font-normal'>
           Morpho Test
         </span>
