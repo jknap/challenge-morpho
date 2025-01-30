@@ -7,9 +7,13 @@ import { VaultsResponse, getVaultsByNameQuery } from '@/lib/api/queries';
 // request comes in, at most once every 60 seconds.
 export const revalidate = 60;
 
+// Not sure how many vaults there are, but if the number is reasonable, we could
+// generate a static list of vaults to pre-fetch.
+const MAX_VAULTS = 100;
+
 export async function generateStaticParams() {
   const { vaults } = await fetchGraphQL<VaultsResponse>(
-    getVaultsByNameQuery('', 100)
+    getVaultsByNameQuery('', MAX_VAULTS)
   );
   return vaults.items.map((vault) => ({
     chainId: `${vault.chain.id}`,

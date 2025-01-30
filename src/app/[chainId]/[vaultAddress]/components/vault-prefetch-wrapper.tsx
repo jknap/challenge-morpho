@@ -19,6 +19,7 @@ export async function VaultPrefetchWrapper({
     queryKey: ['vault', chainId, vaultAddress],
     queryFn: () =>
       fetchGraphQL<VaultResponse>(getVaultQuery(chainId, vaultAddress)),
+    staleTime: 60 * 60 * 24,
   });
 
   return (
