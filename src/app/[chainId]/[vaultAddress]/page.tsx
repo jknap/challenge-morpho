@@ -21,7 +21,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ChainPage({
+export default async function VaultPage({
   params,
 }: {
   params: Promise<{ chainId: string; vaultAddress: string }>;
