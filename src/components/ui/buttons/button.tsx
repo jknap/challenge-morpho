@@ -22,6 +22,8 @@ const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline',
         morpho:
           'text-white bg-morpho-button-bg-default hover:bg-morpho-button-bg-hover focus:bg-morpho-button-bg-focused focus:ring-morpho-button-bg-disabled focus:ring-2',
+        morphoSecondary:
+          'rounded-xsm bg-morpho-bg-primary text-morpho-button-text-body',
       },
       size: {
         default: 'h-10 px-4 py-2',
