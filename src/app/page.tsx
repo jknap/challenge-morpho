@@ -1,11 +1,16 @@
 'use client';
 
+import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { useDebounce } from 'react-use';
 import { Search } from '@/app/components/search/search';
-import { VaultItem } from '@/app/components/search/search-dropdown';
 import { SearchStatus } from '@/app/components/search/search-input';
-import { MOCK_VAULTS } from '@/app/components/search/search.stories';
+import { fetchGraphQL } from '@/lib/api/graphql';
+import {
+  VaultsResponse,
+  getVaultsByAddressQuery,
+  getVaultsByNameQuery,
+} from '@/lib/api/queries';
 
 export default function Home() {
   const [search, setSearch] = useState('');
@@ -23,7 +28,15 @@ export default function Home() {
     [search]
   );
 
-  const vaults = MOCK_VAULTS;
+  const query = debouncedSearch.startsWith('0x')
+    ? getVaultsByAddressQuery(debouncedSearch)
+    : getVaultsByNameQuery(debouncedSearch);
+
+  const { data, isPending, error } = useQuery({
+    queryKey: ['vaults', debouncedSearch],
+    queryFn: () => fetchGraphQL<VaultsResponse>(query),
+    retry: false,
+  });
 
   return (
     <div className='flex-1 overflow-y-auto flex flex-col items-center justify-center h-screen'>
@@ -32,9 +45,9 @@ export default function Home() {
         onClear={status === 'error' && !!search ? onClear : undefined}
         search={search}
         onSearch={setSearch}
-        vaults={vaults}
+        vaults={data?.vaults?.items ?? []}
         onSelect={() => {}}
-        open={vaults.length > 0}
+        open={debouncedSearch.length > 0 && !!data?.vaults?.items.length}
       />
     </div>
   );
