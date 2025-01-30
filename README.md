@@ -1,6 +1,8 @@
-# Next.js 2025 Boilerplate
+# Challenge Morpho
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), enhanced with a comprehensive set of tools and configurations for building scalable web applications.
+This is a challenge for Morpho.
+Here is the link to the [case-study](https://morpho-labs.notion.site/Case-Study-Developing-a-Vault-info-card-13dd69939e6d80b5a781c50d6ce7b0f8)
+Here is the link to the [Figma](https://www.figma.com/design/W3179bRFYxMfBrLE3ENlXA/Frontend-Case-Study---Jean-Knapik?m=auto&t=emHKDDwtcRnL2HiS-1)
 
 ## Features
 
