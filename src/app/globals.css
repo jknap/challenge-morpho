@@ -37,6 +37,8 @@ body {
     --morpho-text-secondary: 208 10% 29% / 70%;
     --morpho-text-interactive-error: 347 56% 51% / 95%;
     --morpho-text-button-disabled: 0 0% 100% / 50%;
+    --morpho-text-error: 347 56% 51%;
+    --morpho-text-success: 173 49% 44%;
     --morpho-input-bg-default: 210 13% 11% / 3%;
     --morpho-input-bg-hover: 210 13% 11% / 8%;
     --morpho-input-bg-focused: 210 13% 11% / 10%;
@@ -52,6 +54,7 @@ body {
     --morpho-bg-base: 228 26% 94%;
     --morpho-bg-primary: 210 13% 11% / 6%;
     --morpho-icon-secondary: 210 13% 11% / 60%;
+    --morpho-icon-spin: 37 100% 62% / 50%;
   }
   .dark {
     --background: 0 0% 3.9%;
