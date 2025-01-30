@@ -17,6 +17,7 @@ export default {
         'morpho-border-interactive-active':
           'hsl(var(--morpho-border-interactive-active))',
         'morpho-border-error': 'hsl(var(--morpho-border-error))',
+        'morpho-text-body': 'hsl(var(--morpho-text-body))',
         'morpho-text-secondary': 'hsl(var(--morpho-text-secondary))',
         'morpho-text-interactive-error':
           'hsl(var(--morpho-text-interactive-error))',
