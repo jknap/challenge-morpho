@@ -1,0 +1,14 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "ignore": ["**/*.stories.*"],
+  "ignoreDependencies": [
+    "@storybook/blocks",
+    "eslint",
+    "eslint-config-next",
+    "eslint-config-prettier",
+    "eslint-plugin-storybook",
+    "@testing-library/jest-dom",
+    "ts-node",
+    "postcss-load-config"
+  ]
+}
