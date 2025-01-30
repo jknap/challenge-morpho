@@ -15,9 +15,12 @@ export type VaultsResponse = {
   };
 };
 
-export const getVaultsByAddressQuery = (address: string) => `
+export const getVaultsByAddressQuery = (
+  address: string,
+  limit: number = 10
+) => `
   query VaultSearchByFullAddress {
-    vaults(first: 10 where:{
+    vaults(first: ${limit} where:{
       whitelisted: true,
       address_in: ["${address}"]
     }) {
@@ -35,9 +38,9 @@ export const getVaultsByAddressQuery = (address: string) => `
   }
 `;
 
-export const getVaultsByNameQuery = (name: string) => `
+export const getVaultsByNameQuery = (name: string, limit: number = 10) => `
   query VaultSearchByName {
-    vaults(first: 10 where:{
+    vaults(first: ${limit} where:{
       whitelisted: true,
       search: "${name}"
     }) {
@@ -53,4 +56,44 @@ export const getVaultsByNameQuery = (name: string) => `
       }
     }
   }
+`;
+
+export type VaultItem = {
+  metadata: {
+    image: string;
+    curators: {
+      name: string;
+    }[];
+  };
+  name: string;
+  state: {
+    owner: string;
+    totalAssetsUsd: number;
+    netApy: number;
+  };
+};
+
+export type VaultResponse = {
+  vaultByAddress: VaultItem;
+};
+
+export const getVaultQuery = (chainId: string, vaultAddress: string) => `
+  query VaulyData {
+    vaultByAddress(address: "${vaultAddress}" chainId: ${chainId}) {
+      metadata {
+        image
+        curators {
+          name
+        }
+      }
+      name
+      
+      state {
+        owner
+        totalAssetsUsd
+        netApy
+
+      }
+    }
+  } 
 `;
