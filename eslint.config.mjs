@@ -19,6 +19,8 @@ const eslintConfig = [
   {
     rules: {
       'no-console': 'warn',
+      // TODO: remove this after refactoring
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   },
 ];
