@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useDebounce } from 'react-use';
+import { isAddress } from 'viem';
 import { Search } from '@/app/components/search/search';
 import { SearchStatus } from '@/app/components/search/search-input';
 import { fetchGraphQL } from '@/lib/api/graphql';
@@ -18,7 +19,6 @@ import { formatVaultPath } from '@/lib/route-formatter';
 export default function Home() {
   const [search, setSearch] = useState('');
   const [debouncedSearch, setDebouncedSearch] = useState('');
-  const [status, setStatus] = useState<SearchStatus>('idle');
   const onClear = () => {
     setSearch('');
   };
@@ -31,7 +31,10 @@ export default function Home() {
     [search]
   );
 
-  const query = debouncedSearch.startsWith('0x')
+  const isSearchAddress = debouncedSearch.startsWith('0x');
+  const isAddressError = search.startsWith('0x') && !isAddress(search);
+
+  const query = isSearchAddress
     ? getVaultsByAddressQuery(debouncedSearch)
     : getVaultsByNameQuery(debouncedSearch);
 
@@ -47,6 +50,8 @@ export default function Home() {
     router.push(formatVaultPath(vault));
   }
 
+  const status = isAddressError ? 'error' : 'idle';
+
   return (
     <div className='flex-1 overflow-y-auto flex flex-col items-center justify-center h-screen'>
       <Search
@@ -56,7 +61,7 @@ export default function Home() {
         onSearch={setSearch}
         vaults={data?.vaults?.items ?? []}
         onSelect={onSelect}
-        open={debouncedSearch.length > 0 && !!data?.vaults?.items.length}
+        open={debouncedSearch.length > 0 && status !== 'error'}
       />
     </div>
   );
