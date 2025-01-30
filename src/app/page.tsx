@@ -1,7 +1,24 @@
+'use client';
+
+import { useState } from 'react';
+import { Search, SearchStatus } from '@/app/components/search';
+
 export default function Home() {
+  const [search, setSearch] = useState('');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- TODO: remove this
+  const [status, setStatus] = useState<SearchStatus>('idle');
+  const onClear = () => {
+    setSearch('');
+  };
+
   return (
     <div className='flex-1 overflow-y-auto flex flex-col items-center justify-center h-screen'>
-      <div className='w-[350px] h-[160px] px-5 bg-morpho-bg-block border-morpho-border-primary border rounded-lg flex flex-col items-center justify-center'></div>
+      <Search
+        status={status}
+        onClear={status === 'error' && !!search ? onClear : undefined}
+        search={search}
+        onSearch={setSearch}
+      />
     </div>
   );
 }

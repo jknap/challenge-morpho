@@ -44,7 +44,10 @@ export const Disabled: Story = {
 export const WithLabel: Story = {
   render: (args) => (
     <div className='grid items-center gap-1.5'>
-      <label htmlFor='email' className='text-morpho-text-secondary text-xs'>
+      <label
+        htmlFor='email'
+        className='text-morpho-text-secondary text-xs font-medium'
+      >
         Vault Address
       </label>
       <Input {...args} id='email' />

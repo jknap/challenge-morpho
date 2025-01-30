@@ -24,6 +24,8 @@ export default {
           'hsl(var(--morpho-text-interactive-error))',
         'morpho-text-button-disabled':
           'hsl(var(--morpho-text-button-disabled))',
+        'morpho-text-error': 'hsl(var(--morpho-text-error))',
+        'morpho-text-success': 'hsl(var(--morpho-text-success))',
         'morpho-button-bg-default': 'hsl(var(--morpho-button-bg-default))',
         'morpho-button-bg-hover': 'hsl(var(--morpho-button-bg-hover))',
         'morpho-button-bg-progress': 'hsl(var(--morpho-button-bg-progress))',
@@ -33,6 +35,7 @@ export default {
         'morpho-bg-base': 'hsl(var(--morpho-bg-base))',
         'morpho-bg-primary': 'hsl(var(--morpho-bg-primary))',
         'morpho-icon-secondary': 'hsl(var(--morpho-icon-secondary))',
+        'morpho-icon-spin': 'hsl(var(--morpho-icon-spin))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
