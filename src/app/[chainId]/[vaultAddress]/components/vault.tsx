@@ -56,7 +56,7 @@ export function Vault({
   }
 
   return (
-    <div className='h-screen flex flex-col gap-4 items-center justify-center'>
+    <div className='flex-1 h-screen flex flex-col gap-4 items-center justify-center'>
       <div className='w-[360px] flex flex-col gap-2 p-5 bg-white rounded-lg'>
         <div className='flex items-center border-b p-2 gap-2'>
           <img
