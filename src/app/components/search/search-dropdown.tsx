@@ -33,9 +33,15 @@ export function SearchDropdown({
           vaults.map((vault) => (
             <div
               key={vault.address}
-              className='px-4 py-2 flex items-center justify-between hover:bg-morpho-bg-block cursor-pointer'
+              className='px-4 py-2 flex items-center gap-2 hover:bg-gray-100 cursor-pointer rounded-lg'
             >
-              <div onClick={() => onSelect(vault)}>{vault.name}</div>
+              <div className='w-5 h-5 rounded-full bg-blue-500' />
+              <div
+                onClick={() => onSelect(vault)}
+                className='flex-1 text-morpho-text-body text-xsm'
+              >
+                {vault.name}
+              </div>
               <ChevronRight size={20} />
             </div>
           ))
