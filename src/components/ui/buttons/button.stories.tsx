@@ -107,6 +107,12 @@ export const Default: Story = {
   },
 };
 
+export const Morpho: Story = {
+  args: {
+    variant: 'morpho',
+  },
+};
+
 export const Ghost: Story = {
   args: {
     variant: 'ghost',

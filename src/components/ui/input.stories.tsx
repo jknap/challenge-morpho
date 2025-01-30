@@ -12,7 +12,7 @@ const meta = {
   args: {
     className: 'w-96',
     type: 'email',
-    placeholder: 'Email',
+    placeholder: 'Vault Address or Name...',
     disabled: false,
   },
   parameters: {
@@ -44,8 +44,25 @@ export const Disabled: Story = {
 export const WithLabel: Story = {
   render: (args) => (
     <div className='grid items-center gap-1.5'>
-      <label htmlFor='email'>{args.placeholder}</label>
+      <label htmlFor='email' className='text-morpho-text-secondary text-xs'>
+        Vault Address
+      </label>
       <Input {...args} id='email' />
+    </div>
+  ),
+};
+
+/**
+ * Use the `Label` component to includes a clear, descriptive label above or
+ * alongside the input area to guide users.
+ */
+export const WithErrorAndLabel: Story = {
+  render: (args) => (
+    <div className='grid items-center gap-1.5'>
+      <label htmlFor='email' className='text-morpho-text-secondary text-xs'>
+        Vault Address
+      </label>
+      <Input {...args} id='email' variant='error' />
     </div>
   ),
 };

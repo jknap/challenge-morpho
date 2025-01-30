@@ -11,6 +11,22 @@ export default {
   theme: {
     extend: {
       colors: {
+        'morpho-input-bg-default': 'hsl(var(--morpho-input-bg-default))',
+        'morpho-input-bg-hover': 'hsl(var(--morpho-input-bg-hover))',
+        'morpho-input-bg-focused': 'hsl(var(--morpho-input-bg-focused))',
+        'morpho-border-interactive-active':
+          'hsl(var(--morpho-border-interactive-active))',
+        'morpho-border-error': 'hsl(var(--morpho-border-error))',
+        'morpho-text-body': 'hsl(var(--morpho-text-body))',
+        'morpho-text-secondary': 'hsl(var(--morpho-text-secondary))',
+        'morpho-text-interactive-error':
+          'hsl(var(--morpho-text-interactive-error))',
+        'morpho-text-button-disabled':
+          'hsl(var(--morpho-text-button-disabled))',
+        'morpho-button-bg-default': 'hsl(var(--morpho-button-bg-default))',
+        'morpho-button-bg-hover': 'hsl(var(--morpho-button-bg-hover))',
+        'morpho-button-bg-progress': 'hsl(var(--morpho-button-bg-progress))',
+        'morpho-button-bg-disabled': 'hsl(var(--morpho-button-bg-disabled))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -56,6 +72,9 @@ export default {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      fontSize: {
+        xsm: ['0.8125rem', '1.125rem'],
       },
     },
   },
