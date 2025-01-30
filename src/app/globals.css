@@ -40,12 +40,18 @@ body {
     --morpho-input-bg-default: 210 13% 11% / 3%;
     --morpho-input-bg-hover: 210 13% 11% / 8%;
     --morpho-input-bg-focused: 210 13% 11% / 10%;
+    --morpho-border-primary: 210 10% 29% / 15%;
     --morpho-border-interactive-active: 219 100% 67% / 65%;
     --morpho-border-error: 347 56% 51% / 65%;
     --morpho-button-bg-default: 220 100% 58% / 85%;
     --morpho-button-bg-hover: 220 100% 58% / 92%;
     --morpho-button-bg-progress: 220 100% 58% / 75%;
     --morpho-button-bg-disabled: 220 100% 58% / 40%;
+    --morpho-button-text-body: 210 13% 11% / 95%;
+    --morpho-bg-block: 213 100% 99%;
+    --morpho-bg-base: 228 26% 94%;
+    --morpho-bg-primary: 210 13% 11% / 6%;
+    --morpho-icon-secondary: 210 13% 11% / 60%;
   }
   .dark {
     --background: 0 0% 3.9%;

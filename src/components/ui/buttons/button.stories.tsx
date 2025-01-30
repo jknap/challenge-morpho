@@ -113,6 +113,12 @@ export const Morpho: Story = {
   },
 };
 
+export const MorphoSecondary: Story = {
+  args: {
+    variant: 'morphoSecondary',
+  },
+};
+
 export const Ghost: Story = {
   args: {
     variant: 'ghost',

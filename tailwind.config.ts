@@ -14,6 +14,7 @@ export default {
         'morpho-input-bg-default': 'hsl(var(--morpho-input-bg-default))',
         'morpho-input-bg-hover': 'hsl(var(--morpho-input-bg-hover))',
         'morpho-input-bg-focused': 'hsl(var(--morpho-input-bg-focused))',
+        'morpho-border-primary': 'hsl(var(--morpho-border-primary))',
         'morpho-border-interactive-active':
           'hsl(var(--morpho-border-interactive-active))',
         'morpho-border-error': 'hsl(var(--morpho-border-error))',
@@ -27,6 +28,11 @@ export default {
         'morpho-button-bg-hover': 'hsl(var(--morpho-button-bg-hover))',
         'morpho-button-bg-progress': 'hsl(var(--morpho-button-bg-progress))',
         'morpho-button-bg-disabled': 'hsl(var(--morpho-button-bg-disabled))',
+        'morpho-button-text-body': 'hsl(var(--morpho-button-text-body))',
+        'morpho-bg-block': 'hsl(var(--morpho-bg-block))',
+        'morpho-bg-base': 'hsl(var(--morpho-bg-base))',
+        'morpho-bg-primary': 'hsl(var(--morpho-bg-primary))',
+        'morpho-icon-secondary': 'hsl(var(--morpho-icon-secondary))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -72,6 +78,8 @@ export default {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+        xsm: 'calc(var(--radius) - 5px)',
+        xs: 'calc(var(--radius) - 6px)',
       },
       fontSize: {
         xsm: ['0.8125rem', '1.125rem'],
