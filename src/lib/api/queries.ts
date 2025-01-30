@@ -1,7 +1,12 @@
 export type Vault = {
-  name: string;
-  chainId: string;
   address: string;
+  chain: {
+    id: number;
+  };
+  metadata: {
+    image: string;
+  };
+  name: string;
 };
 
 export type VaultsResponse = {
